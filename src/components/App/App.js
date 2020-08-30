@@ -4,6 +4,7 @@ import { auth } from "../../firebase";
 import { useStore } from "../../store/StoreProvider";
 import actionTypes from "../../store/actionTypes";
 import Login from "../Login/Login";
+import MainApp from "../MainApp/MainApp";
 
 function App() {
   const [{ user }, dispatch] = useStore();
@@ -17,14 +18,6 @@ function App() {
       setUser(foundUser);
     }
   }, []);
-
-  // db.collection("users")
-  //   .get()
-  //   .then((querySnapshot) => {
-  //     querySnapshot.forEach((doc) => {
-  //       console.log(`${doc.id} => ${doc.data().todos}`);
-  //     });
-  //   });
 
   function setUser(user) {
     localStorage.setItem("user", JSON.stringify(user));
@@ -41,12 +34,9 @@ function App() {
       {!user ? (
         <Login setUser={setUser} />
       ) : (
-        <div>
-          <h1>Main App</h1>
-          <h2>Hello, {user.displayName}</h2>
-          <img src={user?.photoURL} alt="" />
-          <button onClick={logout}>Logout</button>
-        </div>
+        <>
+          <MainApp logout={logout}/>
+        </>
       )}
     </div>
   );

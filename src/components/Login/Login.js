@@ -10,7 +10,7 @@ export default function Login({ setUser }) {
   return (
     <div>
       <h1>Login</h1>
-      <button onClick={login}>Login</button>{" "}
+      <button onClick={login}>Login</button>
     </div>
   );
 }
