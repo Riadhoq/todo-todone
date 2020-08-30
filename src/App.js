@@ -1,23 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import db, { auth, provider } from "./firebase"
 
 function App() {
+  db.collection("users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+        console.log(`${doc.id} => ${doc.data().todos}`);
+    });
+});
+
+function login() {
+  auth.signInWithPopup(provider).then((result)=> {
+    console.log(result)
+  })
+}
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
+        <h1>Tada Todo Tada</h1>
+        <button
+          className="App-login-link"
+          onClick={()=>login()}
           rel="noopener noreferrer"
         >
-          Learn React
-        </a>
+          Sign Up/Login
+        </button>
       </header>
     </div>
   );
