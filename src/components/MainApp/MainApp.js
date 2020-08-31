@@ -55,7 +55,7 @@ export default function MainApp({ logout }) {
               name={task.name}
               id={task.id}
               is_done={task.is_done}
-              create_date={task.create_date}
+              //create_date={task.create_date}
             />
           ))}
       </div>

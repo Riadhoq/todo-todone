@@ -1,0 +1,8 @@
+.task-title {
+    color: #202020;
+}
+
+.task-title.scratched{
+    color: #808080;
+    text-decoration: line-through;
+}
