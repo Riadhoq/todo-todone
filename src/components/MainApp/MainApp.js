@@ -48,14 +48,14 @@ export default function MainApp({ logout }) {
       <div className="task-container">
         <h1>Tasks</h1>
         <CreateTask />
-        {(tasks &&
+        {tasks &&
           tasks.map((task) => (
             <Task
               key={task.id}
               name={task.name}
               id={task.id}
               is_done={task.is_done}
-            //   create_date={task.create_date}
+              create_date={task.create_date}
             />
           ))}
       </div>
