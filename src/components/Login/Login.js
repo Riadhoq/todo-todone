@@ -2,6 +2,7 @@ import React from "react";
 import db, { auth, provider } from "../../firebase";
 import firebase from "firebase";
 import { Card, Button } from "@material-ui/core";
+import Person from "@material-ui/icons/Person"
 import "./Login.css";
 
 export default function Login({ setUser }) {
@@ -31,8 +32,8 @@ export default function Login({ setUser }) {
   return (
     <div className="login">
       <Card className="login-card" square={true}>
-        <h1 className="login-card-title">Login</h1>
-        <Button className="login-card-button" variant="contained" size="large" color="primary" onClick={login}>Login with Google</Button>
+        <h1 className="login-card-title">Sign Up/Login</h1>
+        <Button className="login-card-button" startIcon={<Person />} variant="contained" size="large" color="primary" onClick={login}>Login with Google</Button>
       </Card>
     </div>
   );
