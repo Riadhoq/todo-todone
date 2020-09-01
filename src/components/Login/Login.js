@@ -1,6 +1,8 @@
 import React from "react";
 import db, { auth, provider } from "../../firebase";
 import firebase from "firebase";
+import { Card, Button } from "@material-ui/core";
+import "./Login.css";
 
 export default function Login({ setUser }) {
   function login() {
@@ -27,9 +29,11 @@ export default function Login({ setUser }) {
     });
   }
   return (
-    <div>
-      <h1>Login</h1>
-      <button onClick={login}>Login</button>
+    <div className="login">
+      <Card className="login-card" square={true}>
+        <h1 className="login-card-title">Login</h1>
+        <Button className="login-card-button" variant="contained" size="large" color="primary" onClick={login}>Login with Google</Button>
+      </Card>
     </div>
   );
 }

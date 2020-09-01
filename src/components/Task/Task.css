@@ -1,8 +1,20 @@
 .task-title {
     color: #202020;
+    font-size: 20px;
+    flex: 1;
 }
 
 .task-title.scratched{
     color: #808080;
     text-decoration: line-through;
+}
+
+.task-details {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    background-color: white;
 }

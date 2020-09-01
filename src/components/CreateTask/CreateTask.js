@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Add from "@material-ui/icons/Add";
-import "./CreateTask.css";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
@@ -11,6 +10,7 @@ import TextField from "@material-ui/core/TextField";
 import db from "../../firebase";
 import firebase from "firebase";
 import { useStore } from "../../store/StoreProvider";
+import "./CreateTask.css";
 
 export default function CreateTask() {
   const [open, setOpen] = useState(false);
@@ -62,7 +62,7 @@ export default function CreateTask() {
   return (
     <div className="create-task-container">
       <Button onClick={handleClickOpen} variant="contained">
-        <Add /> Create Task
+        <Add /> Create a Task
       </Button>
       <Dialog
         open={open}

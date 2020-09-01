@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useStore } from "../../store/StoreProvider";
 import CreateTask from "../CreateTask/CreateTask";
 import Task from "../Task/Task";
-import "./MainApp.css";
 import Button from "@material-ui/core/Button";
 import MeetingRoomTwoToneIcon from "@material-ui/icons/MeetingRoomTwoTone";
 import db from "../../firebase";
+import "./MainApp.css";
 
 export default function MainApp({ logout }) {
   const [{ user }] = useStore();
@@ -15,6 +15,7 @@ export default function MainApp({ logout }) {
       db.collection("users")
         .doc(user.email)
         .collection("tasks")
+        .orderBy("create_date")
         .onSnapshot((snapshot) => {
           setTasks(
             snapshot.docs.map((doc) => ({
@@ -35,6 +36,7 @@ export default function MainApp({ logout }) {
           <img className="user-details_image" src={user?.photoURL} alt="" />
           <h2 className="user-details_title">{user?.displayName}</h2>
         </div>
+        <div>joined at {new Date(parseInt(user?.createdAt)).toUTCString()}</div>
         <Button
           variant="outlined"
           color="secondary"

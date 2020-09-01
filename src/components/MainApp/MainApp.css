@@ -6,13 +6,20 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
+  height: 100vh;
+  background-color: white;
+}
+
+.user-container .logout_button {
+  margin-top: auto;
+  margin-bottom: 20px;
 }
 
 .user-details {
-  flex: 0.3;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  flex: 0.2;
 }
 
 .user-details_image {

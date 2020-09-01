@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "./App.css";
 import { auth } from "../../firebase";
 import { useStore } from "../../store/StoreProvider";
 import actionTypes from "../../store/actionTypes";
-import Login from "../Login/Login";
 import MainApp from "../MainApp/MainApp";
+import Login from "../Login/Login";
+import "./App.css";
 
 function App() {
   const [{ user }, dispatch] = useStore();
