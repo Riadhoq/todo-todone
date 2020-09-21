@@ -32,7 +32,9 @@ export default function Login({ setUser }) {
   return (
     <div className="login">
       <Card className="login-card" square={true}>
-        <h1 className="login-card-title">Sign Up/Login</h1>
+        <h1>Todo Todone</h1>
+        <img width="150" className="login-card-logo" src="/todo-todone-logo-wide.png" />
+        <h2 className="login-card-title">Sign Up/Login</h2>
         <Button className="login-card-button" startIcon={<Person />} variant="contained" size="large" color="primary" onClick={login}>Login with Google</Button>
       </Card>
     </div>

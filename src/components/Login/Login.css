@@ -8,8 +8,13 @@
 }
 
 .login-card {
-    padding: 20px;
+    padding: 50px;
     text-align: center;
+}
+
+.login-card-logo {
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .login-card .login-card-button {
